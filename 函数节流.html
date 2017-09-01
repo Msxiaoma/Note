@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>函数节流</title>
+    <style type="text/css">
+    .back {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 400px;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, transparent 15px, #52afec 0) top left, linear-gradient(-135deg, transparent 15px, #52afec 0) top right, linear-gradient(45deg, transparent 15px, #52afec 0) bottom left, linear-gradient(-45deg, transparent 15px, #52afec 0) bottom right;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+    }
+    
+    .content {
+        position: relative;
+        margin-top: 12px;
+        margin-left: 12px;
+        width: 375px;
+        height: 375px;
+        background: #fff;
+        z-index: 1
+    }
+    
+    ul li {
+        float: left;
+        list-style: none;
+        width: 25%;
+        margin-top: 10px;
+    }
+    
+    img {
+        position: absolute;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="back">
+        <div class="content">
+            <ul id="gameBox">
+                <li><img src="./img/fox.png" alt="" id="fox"></li>
+                <li><img src="./img/fish.png" alt=""></li>
+                <li><img src="./img/pangxie.png" alt=""></li>
+                <li><img src="./img/chicken.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var ulId = document.getElementById("gameBox")
+
+    var liList = document.getElementsByTagName('li')
+    var fox = document.getElementById("fox")
+    document.addEventListener("mousemove", function(event) {
+        fox.style.left = event.clientX + 'px'
+        fox.style.top = event.clientY + 'px'
+    })
+    // fox.onmousemove = function(event){
+    //     console.log(event);
+    //     var target = event.target
+    //     if(target.nodeName.toLowerCase() == "img"){
+    //          target.style.left = event.clientX + 'px'
+    //           //  target.style.top = event.clientY + 'px'
+    //        // document.addEventListener("mousemove", function(event){
+    //        //      target.style.left = event.clientX + 'px'
+    //        //      target.style.top = event.clientY + 'px'
+    //        // })
+    //     }
+    // }
+    </script>
+</body>
+
+</html>
