@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style type="text/css">
+    /*#tab {
+        overflow: hidden;
+        width: 400px;
+        height: 250px;
+        position: relative;
+        float: left;
+    }*/
+    
+    /*让img第一个子元素以外的其他子元素隐藏*/
+     #tab>img:not(:first-child) {
+        display: none;
+    }
+    
+   /* .share-list {
+        display: flex;
+    }
+    
+    .share-item {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .gap {
+        flex: 1;
+        width: 1%;
+    }*/
+    </style>
+    <script>
+    window.onload = function() {
+        var images = document.getElementsByTagName('img')
+        var pos = 0
+        var len = images.length
+        setInterval(function() {
+            images[pos].style.display = 'none'
+            pos = ++pos == len ? 0 : pos
+            images[pos].style.display = 'inline'
+        }, 1000)
+
+    }
+    </script>
+</head>
+
+<body>
+     <div id="tab">
+        <img src="./img/chicken.png" />
+        <img src="./img/fish.png" />
+        <img src="./img/fox.png" />
+        <img src="./img/pangxie.png" />
+    </div>
+</body>
+
+</html>
+
+</html>
